@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose --file docker-compose.yml convert --chart
+    kompose.version: 1.26.0 (40646f47)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: spark-slave
+  name: spark-slave
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: spark-slave
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose --file docker-compose.yml convert --chart
+        kompose.version: 1.26.0 (40646f47)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/k8se2eparser-front: "true"
+        io.kompose.service: spark-slave
+    spec:
+      containers:
+        - args:
+            - /usr/local/spark/bin/spark-class
+            - org.apache.spark.deploy.worker.Worker
+            - spark://master:7077
+          env:
+            - name: SPARK_CONF_DIR
+              value: /usr/local/spark/conf
+            - name: SPARK_HOME
+              value: /usr/local/spark
+            - name: SPARK_PUBLIC_DNS
+              value: localhost
+            - name: SPARK_WORKER_CORES
+              value: "2"
+            - name: SPARK_WORKER_MEMORY
+              value: 1g
+            - name: SPARK_WORKER_PORT
+              value: "8881"
+            - name: SPARK_WORKER_WEBUI_PORT
+              value: "8081"
+          image: jairamc/spark-kafka-streaming
+          name: spark-slave
+          ports:
+            - containerPort: 8081
+          resources: {}
+      hostname: worker
+      restartPolicy: Always
+status: {}

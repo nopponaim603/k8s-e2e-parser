@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose --file docker-compose.yml convert --chart
+    kompose.version: 1.26.0 (40646f47)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: dota2parser
+  name: dota2parser
+spec:
+  ports:
+    - name: "5600"
+      port: 5600
+      targetPort: 5600
+  selector:
+    io.kompose.service: dota2parser
+status:
+  loadBalancer: {}
