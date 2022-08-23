@@ -65,7 +65,7 @@ services:
       front:
         ipv4_address: 172.16.238.12
 
-  master:
+  spark-master:
     image: jairamc/spark-kafka-streaming
     hostname: master
     environment:
@@ -83,7 +83,7 @@ services:
       front:
         ipv4_address: 172.16.238.13
 
-  slave:
+  spark-slave:
     image: jairamc/spark-kafka-streaming
     hostname: worker
     depends_on:
