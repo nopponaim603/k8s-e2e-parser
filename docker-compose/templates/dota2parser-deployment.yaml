@@ -29,7 +29,7 @@ spec:
         - env:
             - name: JVM_OPTS
               value: -Xms1024M -Xmx1024M
-          image: nopponaim603/dota2parser
+          image: nopponaim603/dota2parser:k8s
           name: dota2parser
           ports:
             - containerPort: 5600

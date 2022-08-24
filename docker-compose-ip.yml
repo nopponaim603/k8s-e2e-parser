@@ -2,7 +2,7 @@ version: '2'
 services:
 
   flume:
-    image: nopponaim603/flume:kafka
+    image: nopponaim603/flume:kafka-k8s
     ports:
       - "44444:44444"
     volumes:
@@ -15,7 +15,7 @@ services:
         ipv4_address: 10.96.0.2
 
   dota2parser:
-    image: nopponaim603/dota2parser
+    image: nopponaim603/dota2parser:k8s
     ports:
       - "5600:5600"
     volumes:
@@ -65,7 +65,7 @@ services:
       front:
         ipv4_address: 10.96.0.12
 
-  spark-master:
+  master:
     image: jairamc/spark-kafka-streaming
     hostname: master
     environment:
@@ -83,7 +83,7 @@ services:
       front:
         ipv4_address: 10.96.0.13
 
-  spark-slave:
+  slave:
     image: jairamc/spark-kafka-streaming
     hostname: worker
     depends_on:
@@ -103,9 +103,6 @@ services:
       # you may set custom IP addresses
       front:
         ipv4_address: 10.96.0.14
-
-
-
 
 networks:
   front:

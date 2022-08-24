@@ -29,7 +29,7 @@ spec:
         - env:
             - name: FLUME_AGENT_NAME
               value: docker
-          image: nopponaim603/flume:kafka
+          image: nopponaim603/flume:kafka-k8s
           name: flume
           ports:
             - containerPort: 44444

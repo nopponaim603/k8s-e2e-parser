@@ -15,8 +15,8 @@ RUN apt-get update -qq \
     && wget -qO- http://archive.apache.org/dist/flume/1.8.0/apache-flume-1.8.0-bin.tar.gz \
           | tar zxvf - -C /opt/flume --strip 1
 
-ADD ./flume/start-flume.sh /opt/flume/bin/start-flume
-ADD ./flume/conf/flume.conf /opt/flume/conf/flume.conf
+ADD start-flume.sh /opt/flume/bin/start-flume
+ADD ./conf/flume.conf /opt/flume/conf/flume.conf
 
 ENTRYPOINT [ "start-flume" ]
 #CMD flume-ng agent -n agent1 --conf /opt/flume/conf/flume-conf.properties

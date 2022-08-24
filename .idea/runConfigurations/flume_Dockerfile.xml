@@ -2,7 +2,8 @@
   <configuration default="false" name="flume/Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
     <deployment type="dockerfile">
       <settings>
-        <option name="containerName" value="" />
+        <option name="imageTag" value="flume:kafka" />
+        <option name="containerName" value="Dota2Flume" />
         <option name="contextFolderPath" value="." />
         <option name="sourceFilePath" value="flume/Dockerfile" />
       </settings>

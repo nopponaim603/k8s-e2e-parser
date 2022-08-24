@@ -13,10 +13,10 @@ spec:
     - name: "5600"
       port: 5600
       targetPort: 5600
-  clusterIP: 172.16.238.2
+  clusterIP: 10.96.0.3
   selector:
     io.kompose.service: dota2parser
 status:
   loadBalancer:
     ingress:
-      - ip: 172.16.1.50
+      - ip: 192.168.1.100
