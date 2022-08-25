@@ -15,7 +15,7 @@ spec:
       targetPort: 5600
   clusterIP: 10.96.0.3
   externalIPs:
-    - 0.0.0.0
+    - 10.41.32.160
   selector:
     io.kompose.service: dota2parser
 status:
