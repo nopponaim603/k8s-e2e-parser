@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose --file docker-compose-ip.yml convert --chart
+    kompose.version: 1.26.0 (40646f47)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: dota2parser
+  name: dota2parser
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: dota2parser
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose --file docker-compose-ip.yml convert --chart
+        kompose.version: 1.26.0 (40646f47)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/k8se2eparser-front: "true"
+        io.kompose.service: dota2parser
+    spec:
+      containers:
+        - env:
+            - name: JVM_OPTS
+              value: -Xms1024M -Xmx1024M
+          image: nopponaim603/dota2parser:k8s
+          name: dota2parser
+          ports:
+            - containerPort: 5600
+          resources: {}
+          volumeMounts:
+            - mountPath: /usr/src/parser/JSON
+              name: dota2parser-claim0
+      restartPolicy: Always
+      volumes:
+        - name: dota2parser-claim0
+          persistentVolumeClaim:
+            claimName: dota2parser-claim0
+status: {}
