@@ -13,7 +13,7 @@ spec:
     - name: "2181"
       port: 2181
       targetPort: 2181
-  clusterIP: 10.96.0.11
+  clusterIP: 10.96.0.21
   selector:
     io.kompose.service: zookeeper
 status:
