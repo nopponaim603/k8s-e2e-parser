@@ -15,5 +15,5 @@ Notice that the Dockerfile copies the spark-kafka-streaming assembly jar into `$
 ### Apache Toree Notebook
 
 See [spark-notebook/Dockerfile](spark-notebook/Dockerfile) to see how the Apache Toree notebook is set up.
-The notebook is set up to connect to the Spark container in the [docker-compose](docker-compose.yml) file.
+The notebook is set up to connect to the Spark container in the [docker-compose](docker-compose-local.yml) file.
 It also attaches a `notebooks` volume that contains a sample Spark notebook.
