@@ -33,6 +33,7 @@ spec:
           name: dota2parser
           ports:
             - containerPort: 5600
+              protocol: UDP
           resources: {}
           volumeMounts:
             - mountPath: /usr/src/parser/JSON
