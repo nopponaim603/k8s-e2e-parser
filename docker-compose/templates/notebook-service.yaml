@@ -9,6 +9,7 @@ metadata:
     io.kompose.service: notebook
   name: notebook
 spec:
+  type: LoadBalancer
   ports:
     - name: "8888"
       port: 8888
