@@ -15,7 +15,6 @@ spec:
       port: 5600
       targetPort: 5600
       protocol: TCP
-  clusterIP: 10.96.0.3
   selector:
     io.kompose.service: dota2parser
 status:

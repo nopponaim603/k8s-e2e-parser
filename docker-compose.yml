@@ -1,6 +1,19 @@
 version: '2'
 services:
 
+  dota2parser:
+    image: nopponaim603/dota2parser:flume
+    ports:
+      - "5600:5600"
+    volumes:
+      - ./JSON:/usr/src/parser/JSON
+    environment:
+      - JVM_OPTS=-Xms1024M -Xmx1024M
+    networks:
+      # you may set custom IP addresses
+      front:
+        ipv4_address: 10.96.0.3
+
   flume:
     image: nopponaim603/flume:kafka-k8s
     ports:
@@ -13,19 +26,6 @@ services:
       # you may set custom IP addresses
       front:
         ipv4_address: 10.96.0.2
-
-  dota2parser:
-    image: nopponaim603/dota2parser:k8s
-    ports:
-      - "5600:5600"
-    volumes:
-      - ./JSON:/usr/src/parser/JSON
-    environment:
-      - JVM_OPTS=-Xms1024M -Xmx1024M
-    networks:
-      # you may set custom IP addresses
-      front:
-        ipv4_address: 10.96.0.3
 
   kafka:
     image: wurstmeister/kafka

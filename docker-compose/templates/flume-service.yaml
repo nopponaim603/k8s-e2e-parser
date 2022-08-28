@@ -13,7 +13,6 @@ spec:
     - name: "44444"
       port: 44444
       targetPort: 44444
-  clusterIP: 10.96.0.2
   selector:
     io.kompose.service: flume
 status:
