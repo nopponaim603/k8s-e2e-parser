@@ -43,7 +43,7 @@ spec:
             - -Xmx1024m
             - /usr/src/parser/target/stats-0.1.0.jar
             - "5600"
-            - 10.103.154.228
+            - 10.98.110.64
             - "44444"
       restartPolicy: Always
       volumes:
