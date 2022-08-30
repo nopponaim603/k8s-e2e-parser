@@ -30,10 +30,11 @@ spec:
             - jupyter
             - notebook
             - --ip=0.0.0.0
+            - --allow-root
           env:
             - name: SPARK_OPTS
               value: --master=spark://master:7077
-          image: jairamc/spark-kafka-streaming-notebook
+          image: nopponaim603/jupyter-notebook:spark-kafka-3.1.2
           name: notebook
           ports:
             - containerPort: 8888

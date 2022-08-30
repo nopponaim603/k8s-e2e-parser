@@ -44,7 +44,7 @@ spec:
               value: "8881"
             - name: SPARK_WORKER_WEBUI_PORT
               value: "8081"
-          image: jairamc/spark-kafka-streaming
+          image: nopponaim603/spark-streaming-kafka:3.1.2
           name: slave
           ports:
             - containerPort: 8081
