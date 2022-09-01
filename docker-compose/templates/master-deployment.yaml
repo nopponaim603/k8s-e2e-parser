@@ -39,7 +39,7 @@ spec:
               value: /usr/local/spark
             - name: SPARK_PUBLIC_DNS
               value: localhost
-          image: nopponaim603/spark-streaming-kafka:3.1.2
+          image: nopponaim603/spark-streaming-kafka:3.3.0
           name: master
           ports:
             - containerPort: 8080
