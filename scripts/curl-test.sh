@@ -7,3 +7,6 @@ curl localhost:5600 --data-binary "@G:\My Drive\DataLake\replay.dem"
 curl localhost:5600 --data-binary  "@C:\Users\noppo\OneDrive - Chiang Mai University\DataLake\replay.dem"
 curl localhost:5600 --data-binary "@/home/noppon/Downloads/replay.dem"
 #java -jar target/combatlog.one-jar.jar replay.dem
+
+# in microk8s-1 (Rang ip 172.16.1.30-172.16.1.50)
+curl 172.16.1.31:5600 --data-binary  "@C:\Users\noppo\OneDrive - Chiang Mai University\DataLake\replay.dem"
