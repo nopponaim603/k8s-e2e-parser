@@ -15,11 +15,7 @@ spec:
       port: 5600
       targetPort: 5600
       protocol: TCP
-  externalIPs:
-    - 172.16.1.225
   selector:
     io.kompose.service: dota2parser
 status:
-  loadBalancer:
-    ingress:
-      - hostname: dota2parser.com
+  loadBalancer: {}
