@@ -29,7 +29,7 @@ spec:
         - env:
             - name: JVM_OPTS
               value: -Xms1024M -Xmx1024M
-          image: nopponaim603/dota2parser:flume
+          image: nopponaim603/dota2parser:flume-v2
           name: dota2parser
           ports:
             - containerPort: 5600
@@ -43,8 +43,9 @@ spec:
             - -Xmx1024m
             - /usr/src/parser/target/stats-0.1.0.jar
             - "5600"
-            - 10.152.183.2
-            - "44444"
+            - flume
+            - "44451"
+            - "3"
       restartPolicy: Always
       volumes:
         - name: dota2parser-claim0

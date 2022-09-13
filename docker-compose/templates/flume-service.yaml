@@ -10,9 +10,25 @@ metadata:
   name: flume
 spec:
   ports:
+  ports:
     - name: "44444"
       port: 44444
       targetPort: 44444
+    - name: "44451"
+      port: 44451
+      targetPort: 44451
+    - name: "44452"
+      port: 44452
+      targetPort: 44452
+    - name: "44453"
+      port: 44453
+      targetPort: 44453
+    - name: "44454"
+      port: 44454
+      targetPort: 44454
+    - name: "44455"
+      port: 44455
+      targetPort: 44455
   selector:
     io.kompose.service: flume
 status:
