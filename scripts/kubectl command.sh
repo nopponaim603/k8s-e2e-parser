@@ -1,0 +1,1 @@
+microk8s kubectl exec -it <pod-name> -c <name-space> bash
