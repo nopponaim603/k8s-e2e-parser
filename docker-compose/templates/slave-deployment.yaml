@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    kompose.cmd: kompose --file docker-compose-ip.yml convert --chart
+    kompose.cmd: kompose --file docker-compose.yml convert --chart
     kompose.version: 1.26.0 (40646f47)
   creationTimestamp: null
   labels:
@@ -17,7 +17,7 @@ spec:
   template:
     metadata:
       annotations:
-        kompose.cmd: kompose --file docker-compose-ip.yml convert --chart
+        kompose.cmd: kompose --file docker-compose.yml convert --chart
         kompose.version: 1.26.0 (40646f47)
       creationTimestamp: null
       labels:
@@ -44,7 +44,7 @@ spec:
               value: "8881"
             - name: SPARK_WORKER_WEBUI_PORT
               value: "8081"
-          image: nopponaim603/spark-streaming-kafka:3.3.0
+          image: nopponaim603/spark-streaming-kafka:3.1.2
           name: slave
           ports:
             - containerPort: 8081

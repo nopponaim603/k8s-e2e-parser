@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    kompose.cmd: kompose --file docker-compose-ip.yml convert --chart
+    kompose.cmd: kompose --file docker-compose.yml convert --chart
     kompose.version: 1.26.0 (40646f47)
   creationTimestamp: null
   labels:
@@ -18,7 +18,7 @@ spec:
   template:
     metadata:
       annotations:
-        kompose.cmd: kompose --file docker-compose-ip.yml convert --chart
+        kompose.cmd: kompose --file docker-compose.yml convert --chart
         kompose.version: 1.26.0 (40646f47)
       creationTimestamp: null
       labels:
@@ -29,10 +29,15 @@ spec:
         - env:
             - name: FLUME_AGENT_NAME
               value: docker
-          image: nopponaim603/flume:kafka-1.9.0
+          image: nopponaim603/flume:kafka-1.9.0-v2
           name: flume
           ports:
             - containerPort: 44444
+            - containerPort: 44451
+            - containerPort: 44452
+            - containerPort: 44453
+            - containerPort: 44454
+            - containerPort: 44455
           resources: {}
           volumeMounts:
             - mountPath: /opt/tmp/

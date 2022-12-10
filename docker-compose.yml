@@ -41,7 +41,7 @@ services:
     ports:
       - "9092:9092"
     environment:
-      ALLOW_PLAINTEXT_LISTENER: yes
+      #ALLOW_PLAINTEXT_LISTENER: yes
       # Ref https://medium.com/@robcowart/deploying-confluent-platform-kafka-oss-using-docker-39b65fa6809b
       # JVM Heap Size
       # Kafka uses heap space very carefully and does not require setting heap sizes more than 6 GB.
